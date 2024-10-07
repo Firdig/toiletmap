@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:toiletmap/app/modules/home/views/SignUpView.dart';
+import 'package:toiletmap/app/modules/home/views/Login/SignUpView.dart';
 import 'ForgotPasswordView.dart'; // Import the ForgotPasswordView
 
 class LoginView extends StatelessWidget {
