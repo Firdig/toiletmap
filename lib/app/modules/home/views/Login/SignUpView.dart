@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'home_view.dart'; // Make sure to import your login view
+import 'home_view.dart'; // Import your Login view
 
 class SignUpView extends StatelessWidget {
   @override
@@ -86,7 +86,8 @@ class SignUpView extends StatelessWidget {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                // Add register action here
+                // Navigate back to LoginView using GetX
+                Get.off(() => LoginView());
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow[700], // Button color

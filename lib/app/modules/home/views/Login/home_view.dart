@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:toiletmap/app/modules/home/views/Login/SignUpView.dart';
 import 'ForgotPasswordView.dart'; // Import the ForgotPasswordView
+import 'SignUpView.dart'; // Import SignUpView
+import 'package:toiletmap/app/modules/home/views/Homepage/MapPage.dart';
+
 
 class LoginView extends StatelessWidget {
   @override
@@ -70,7 +72,8 @@ class LoginView extends StatelessWidget {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                // Add login action here
+                // Navigate to MapPage using GetX when login button is pressed
+                Get.to(() => MapPage());
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow[700], // Button color
