@@ -11,9 +11,7 @@ class _MapPageState extends State<MapPage> {
   // Define the pages for navigation
   final List<Widget> _pages = [
     MapView(), // Map page
-    FeedPage(), // Feed page
-    ProfilePage(), // Profile page
-    NotificationPage(), // Notification page
+    // Notification page
   ];
 
   // Function to handle navigation when an icon is tapped
@@ -140,80 +138,6 @@ class MapView extends StatelessWidget {
     return Center(
       child: Text(
         'Map View',
-        style: TextStyle(fontSize: 24, color: Colors.white),
-      ),
-    );
-  }
-}
-
-// Placeholder for the FeedPage
-class FeedPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFF181C14),
-      appBar: AppBar(
-        title: const Text('Feed'),
-        backgroundColor: Color(0xFF181C14),
-        actions: [
-          TextButton(
-            onPressed: () {
-              // Handle add friends action
-            },
-            child: Text(
-              'Add Friends',
-              style: TextStyle(color: Colors.yellow),
-            ),
-          ),
-        ],
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.message,
-              size: 100,
-              color: Colors.white,
-            ),
-            const SizedBox(height: 20),
-            Text(
-              'Empty Feed',
-              style: TextStyle(color: Colors.white, fontSize: 24),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              'Mark Toilet on the map or follow people to see the feed',
-              style: TextStyle(color: Colors.white54),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// Placeholder for the ProfilePage
-class ProfilePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Profile Page',
-        style: TextStyle(fontSize: 24, color: Colors.white),
-      ),
-    );
-  }
-}
-
-// Placeholder for the NotificationPage
-class NotificationPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Notification Page',
         style: TextStyle(fontSize: 24, color: Colors.white),
       ),
     );

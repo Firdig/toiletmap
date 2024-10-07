@@ -35,11 +35,11 @@ class FeedPage extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 24), // White large text
             ),
             const SizedBox(height: 10),
-            Text(
-              'Mark Toilet on the map or follow people to see the feed',
-              style: TextStyle(color: Colors.white54), // White faded text
-              textAlign: TextAlign.center,
-            ),
+            // Text(
+            //   'Mark Toilet on the map or follow people to see the feed',
+            //   style: TextStyle(color: Colors.white54), // White faded text
+            //   textAlign: TextAlign.center,
+            // ),
           ],
         ),
       ),
