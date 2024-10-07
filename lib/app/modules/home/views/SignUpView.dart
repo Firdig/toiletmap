@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:toiletmap/app/modules/home/views/SignUpView.dart';
-import 'ForgotPasswordView.dart'; // Import the ForgotPasswordView
+import 'home_view.dart'; // Make sure to import your login view
 
-class LoginView extends StatelessWidget {
+class SignUpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF181C14), // Adjust background color if needed
+      appBar: AppBar(
+        title: const Text('Sign Up'),
+        backgroundColor: Color(0xFF181C14),
+        automaticallyImplyLeading: false, // No back button in the app bar
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'SIGN IN',
+              'SIGN UP',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
@@ -24,7 +28,21 @@ class LoginView extends StatelessWidget {
             const SizedBox(height: 40),
             TextField(
               decoration: InputDecoration(
-                hintText: 'Username / Email',
+                hintText: 'Email',
+                hintStyle: TextStyle(color: Colors.white54),
+                filled: true,
+                fillColor: Colors.white12,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide.none,
+                ),
+              ),
+              style: TextStyle(color: Colors.white),
+            ),
+            const SizedBox(height: 20),
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Username',
                 hintStyle: TextStyle(color: Colors.white54),
                 filled: true,
                 fillColor: Colors.white12,
@@ -50,27 +68,25 @@ class LoginView extends StatelessWidget {
               ),
               style: TextStyle(color: Colors.white),
             ),
-            const SizedBox(height: 10),
-            Align(
-              alignment: Alignment.centerRight,
-              child: GestureDetector(
-                onTap: () {
-                  // Navigate to ForgotPasswordView using GetX
-                  Get.to(() => ForgotPasswordView());
-                },
-                child: Text(
-                  'Forgot Password?',
-                  style: TextStyle(
-                    color: Colors.lightBlueAccent,
-                    fontSize: 14,
-                  ),
+            const SizedBox(height: 20),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                hintText: 'Repeat Password',
+                hintStyle: TextStyle(color: Colors.white54),
+                filled: true,
+                fillColor: Colors.white12,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide.none,
                 ),
               ),
+              style: TextStyle(color: Colors.white),
             ),
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                // Add login action here
+                // Add register action here
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow[700], // Button color
@@ -83,7 +99,7 @@ class LoginView extends StatelessWidget {
                 ),
               ),
               child: const Text(
-                'LOGIN',
+                'REGISTER',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
@@ -91,31 +107,9 @@ class LoginView extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 20),
-            GestureDetector(
-              onTap: () {
-                // Navigate to SignUpView using GetX
-                Get.to(() => SignUpView());
-              },
-              child: RichText(
-                text: const TextSpan(
-                  text: 'Don\'t have an account? ',
-                  style: TextStyle(color: Colors.white),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: 'Signup',
-                      style: TextStyle(
-                        color: Colors.lightBlueAccent,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
             const SizedBox(height: 40),
             const Text(
-              'Or Login with',
+              'Or Signup with',
               style: TextStyle(
                 color: Colors.white54,
                 fontSize: 14,
@@ -126,17 +120,39 @@ class LoginView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _buildSocialButton('assets/google.png', () {
-                  // Add Google login action
+                  // Add Google sign-up action
                 }),
                 const SizedBox(width: 20),
                 _buildSocialButton('assets/facebook.png', () {
-                  // Add Facebook login action
+                  // Add Facebook sign-up action
                 }),
                 const SizedBox(width: 20),
                 _buildSocialButton('assets/x_icon.png', () {
-                  // Add Twitter login action
+                  // Add Twitter sign-up action
                 }),
               ],
+            ),
+            const SizedBox(height: 20),
+            GestureDetector(
+              onTap: () {
+                // Navigate back to LoginView using GetX
+                Get.back();
+              },
+              child: RichText(
+                text: const TextSpan(
+                  text: 'Already have an account? ',
+                  style: TextStyle(color: Colors.white),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'Login',
+                      style: TextStyle(
+                        color: Colors.lightBlueAccent,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
