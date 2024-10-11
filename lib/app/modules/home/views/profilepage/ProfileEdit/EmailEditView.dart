@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:toiletmap/app/modules/home/controllers/profile_controller.dart'; // Import controller
+import 'package:toiletmap/app/modules/home/views/custom_bottom_nav.dart';
 
 class EmailEditView extends StatelessWidget {
   final ProfileController controller = Get.put(ProfileController());
@@ -8,16 +9,17 @@ class EmailEditView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black12,
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.yellow),
+          icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Get.back(); // Navigasi kembali
           },
         ),
         title: Text(
           'Email',
-          style: TextStyle(color: Colors.yellow), // Warna teks kuning
+          style: TextStyle(color: Colors.white), // Warna teks kuning
         ),
         actions: [
           TextButton(
@@ -50,7 +52,7 @@ class EmailEditView extends StatelessWidget {
                 filled: true,
                 fillColor: Colors.black54, // Warna background TextField
                 hintText: 'Add your email',
-                hintStyle: TextStyle(color: Colors.yellow), // Placeholder kuning
+                hintStyle: TextStyle(color: Colors.white), // Placeholder kuning
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                   borderSide: BorderSide(
@@ -61,7 +63,7 @@ class EmailEditView extends StatelessWidget {
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                   borderSide: BorderSide(
-                    color: Colors.yellow, // Border kuning saat fokus
+                    color: Colors.white, // Border kuning saat fokus
                     width: 2,
                   ),
                 ),
@@ -80,23 +82,7 @@ class EmailEditView extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: Colors.black, // Latar belakang hitam
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        currentIndex: 2, // Ikon ketiga dipilih
-        onTap: (index) {
-          // Aksi navigasi jika diperlukan
-        },
-        selectedItemColor: Colors.yellow,
-        unselectedItemColor: Colors.white,
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.language), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.layers), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ''),
-        ],
-      ),
+      bottomNavigationBar: CustomBottomNav(),
     );
   }
 }

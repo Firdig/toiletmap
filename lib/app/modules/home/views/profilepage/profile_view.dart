@@ -5,7 +5,8 @@ import 'region_view.dart'; // Import RegionView untuk navigasi
 import 'following_view.dart'; // Import FollowingView untuk navigasi
 import 'followers_view.dart'; // Import FollowersView untuk navigasi
 import 'package:toiletmap/app/modules/home/views/custom_bottom_nav.dart';
-
+import 'package:toiletmap/app/modules/home/views/profilepage/ProfileEdit/profileedit_view.dart';
+import 'package:toiletmap/app/modules/home/views/FeedMenu/add_friends_view.dart';
 class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -73,7 +74,7 @@ class ProfileView extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Get.snackbar('Edit Profile', 'Navigating to edit profile');
+                    Get.to(() => ProfileEditView());
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black, backgroundColor: Colors.yellow[600], // Warna teks
@@ -83,7 +84,7 @@ class ProfileView extends StatelessWidget {
                 SizedBox(width: 16),
                 ElevatedButton(
                   onPressed: () {
-                    Get.snackbar('Add Friend', 'Friend added');
+                    Get.to(() => AddFriendsView());
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black, backgroundColor: Colors.yellow[600], // Warna teks

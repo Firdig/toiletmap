@@ -2,12 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'qr_code_view.dart'; // Import QRCodeView
-
+import 'package:toiletmap/app/modules/home/views/custom_bottom_nav.dart';
 class AddFriendsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF181C14),
       appBar: AppBar(
         backgroundColor: Colors.black,
         elevation: 0,
@@ -65,42 +65,7 @@ class AddFriendsView extends StatelessWidget {
           Get.to(() => QRCodeView()); // Navigate to QR Code View
         },
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.yellow,
-        unselectedItemColor: Colors.white,
-        currentIndex: 1, // Index for the Add Friends tab
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.map),
-            label: 'Map',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.view_list),
-            label: 'Feed',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: 'Notifications',
-          ),
-        ],
-        onTap: (index) {
-          // Handle bottom navigation tap
-          if (index == 0) {
-            Get.toNamed('/mapPage'); // Navigate to Map Page
-          } else if (index == 1) {
-            Get.to(() => AddFriendsView()); // Stay on Add Friends Page
-          } else if (index == 2) {
-            Get.toNamed('/profilePage'); // Navigate to Profile Page
-          } else if (index == 3) {
-            Get.toNamed('/notificationsPage'); // Navigate to Notifications Page
-          }
-        },
-      ),
+      bottomNavigationBar: CustomBottomNav(),
     );
   }
 }

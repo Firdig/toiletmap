@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:toiletmap/app/modules/home/controllers/profile_controller.dart'; // Import controller
+import 'package:toiletmap/app/modules/home/views/custom_bottom_nav.dart';
 
 class UsernameEditView extends StatelessWidget {
   final ProfileController controller = Get.put(ProfileController());
@@ -17,7 +18,7 @@ class UsernameEditView extends StatelessWidget {
         ),
         title: Text(
           'Username',
-          style: TextStyle(color: Colors.yellow), // Warna teks kuning
+          style: TextStyle(color: Colors.white), // Warna teks kuning
         ),
         actions: [
           TextButton(
@@ -49,7 +50,7 @@ class UsernameEditView extends StatelessWidget {
                 filled: true,
                 fillColor: Colors.black54, // Warna background TextField
                 hintText: 'Add your username',
-                hintStyle: TextStyle(color: Colors.yellow), // Placeholder kuning
+                hintStyle: TextStyle(color: Colors.white), // Placeholder kuning
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                   borderSide: BorderSide(
@@ -60,7 +61,7 @@ class UsernameEditView extends StatelessWidget {
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                   borderSide: BorderSide(
-                    color: Colors.yellow, // Border kuning saat fokus
+                    color: Colors.white, // Border kuning saat fokus
                     width: 2,
                   ),
                 ),
@@ -79,23 +80,8 @@ class UsernameEditView extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: Colors.black, // Latar belakang hitam
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        currentIndex: 2, // Ikon ketiga dipilih
-        onTap: (index) {
-          // Aksi navigasi jika diperlukan
-        },
-        selectedItemColor: Colors.yellow,
-        unselectedItemColor: Colors.white,
-        type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.language), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.layers), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ''),
-        ],
-      ),
+      backgroundColor: Colors.black12, // Latar belakang hitam
+      bottomNavigationBar: CustomBottomNav(),
     );
   }
 }

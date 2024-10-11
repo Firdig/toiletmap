@@ -12,7 +12,9 @@ class RegionView extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('Toilet Locations'),
+        title: Text('Toilet Locations', style: TextStyle (
+            color: Colors.white
+        ),),
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white), // Back arrow with white color
           onPressed: () {

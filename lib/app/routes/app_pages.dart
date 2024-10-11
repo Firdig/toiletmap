@@ -1,8 +1,9 @@
 import 'package:get/get.dart';
-import 'package:toiletmap/app/modules/home/views/Homepage/Feed_page.dart';
-import 'package:toiletmap/app/modules/home/views/profilepage/profile_view.dart';
-import 'package:toiletmap/app/modules/home/views/profilepage/ProfileEdit/NameEditView.dart';
 
+import 'package:toiletmap/app/modules/home/views/profilepage/ProfileEdit/NameEditView.dart';
+import 'package:toiletmap/app/modules/home/views/profilepage/ProfileEdit/BioEditView.dart';
+import 'package:toiletmap/app/modules/home/views/profilepage/ProfileEdit/EmailEditView.dart';
+import 'package:toiletmap/app/modules/home/views/profilepage/ProfileEdit/UsernameEditView.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/Login/home_view.dart';
 
@@ -18,6 +19,22 @@ class AppPages {
       name: _Paths.HOME,
       page: () => LoginView(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: '/edit-name',
+      page: () => NameEditView(),
+    ),
+    GetPage(
+      name: '/edit-username',
+      page: () => UsernameEditView(),
+    ),
+    GetPage(
+      name: '/edit-email',
+      page: () => EmailEditView(),
+    ),
+    GetPage(
+      name: '/edit-bio',
+      page: () => BioEditView(),
     ),
   ];
 }

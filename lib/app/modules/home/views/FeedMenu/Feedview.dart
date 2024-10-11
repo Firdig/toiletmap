@@ -33,7 +33,7 @@ class FeedView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black, // Set background color as in the screenshot
+      backgroundColor: Color(0xFF181C14), // Set background color as in the screenshot
       appBar: AppBar(
         title: Text('Feed', style: TextStyle(color: Colors.white)),
         automaticallyImplyLeading: false, // Remove back button

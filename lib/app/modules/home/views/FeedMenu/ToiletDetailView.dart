@@ -9,7 +9,7 @@ class ToiletDetailView extends StatelessWidget {
     final String userName = Get.arguments['name'] ?? 'User';
 
     return Scaffold(
-      backgroundColor: Colors.black, // Set background color
+      backgroundColor: Color(0xFF181C14), // Set background color
       appBar: AppBar(
         title: Text("$userName's Toilet", style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.black,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:toiletmap/app/modules/home/views/Login/home_view.dart';
+import 'package:toiletmap/app/modules/home/views/MapMenu/mapglobal_view.dart';
 //import 'home_view.dart'; // Import your Login view
 
 class SignUpView extends StatelessWidget {
@@ -88,7 +88,7 @@ class SignUpView extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Navigate back to LoginView using GetX
-                Get.off(() => LoginView());
+                Get.off(() => MapView());
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow[700], // Button color
