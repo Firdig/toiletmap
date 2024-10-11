@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'profile_controller.dart'; // Import controller
+import 'package:toiletmap/app/modules/home/controllers/profile_controller.dart'; // Import controller
 
 class EmailEditView extends StatelessWidget {
   final ProfileController controller = Get.put(ProfileController());

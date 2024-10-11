@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:toiletmap/app/modules/home/controllers/region_controller.dart';
-import 'package:toiletmap/app/modules/home/views/Homepage/profile_view.dart'; // Import ProfileView jika perlu navigasi kembali
-
+// Import ProfileView jika perlu navigasi kembali
+import 'package:toiletmap/app/modules/home/views/custom_bottom_nav.dart';
 class RegionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -80,33 +80,7 @@ class RegionView extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: Obx(() => Container(
-        decoration: BoxDecoration(
-          color: Colors.black, // Set black background color here
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              spreadRadius: 5,
-              blurRadius: 10,
-              offset: Offset(0, -3),
-            ),
-          ],
-        ),
-        child: BottomNavigationBar(
-          backgroundColor: Colors.black, // Explicitly set the background color to black
-          currentIndex: controller.selectedIndex.value,
-          onTap: controller.onBottomNavTapped,
-          selectedItemColor: Colors.yellow,
-          unselectedItemColor: Colors.white,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.language), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.layers), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ''),
-          ],
-        ),
-      )),
+      bottomNavigationBar: CustomBottomNav(),
     );
   }
 

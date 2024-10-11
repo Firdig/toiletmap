@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../profilepage/region_view.dart'; // Import RegionView untuk navigasi
+import 'region_view.dart'; // Import RegionView untuk navigasi
 //import '../profilepage/ToiletMarkedView'; // Import ToiletMarkedView untuk navigasi
-import '../profilepage/following_view.dart'; // Import FollowingView untuk navigasi
-import '../profilepage/followers_view.dart'; // Import FollowersView untuk navigasi
+import 'following_view.dart'; // Import FollowingView untuk navigasi
+import 'followers_view.dart'; // Import FollowersView untuk navigasi
+import 'package:toiletmap/app/modules/home/views/custom_bottom_nav.dart';
 
 class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF181C14),
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('Profile'),
+        title: Text('Profile',  style: TextStyle (
+            color: Colors.white
+        ),),
         actions: [
           IconButton(
             icon: Icon(Icons.qr_code, color: Colors.white),
@@ -29,6 +32,7 @@ class ProfileView extends StatelessWidget {
             },
           ),
         ],
+        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -233,21 +237,7 @@ class ProfileView extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 2, // Set to selected tab
-        onTap: (index) {
-          Get.snackbar('Tab', 'Navigating to tab $index');
-        },
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.yellow,
-        unselectedItemColor: Colors.white,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.public), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.layers), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ''),
-        ],
-      ),
+      bottomNavigationBar: CustomBottomNav(),
     );
   }
 

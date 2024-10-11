@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:toiletmap/app/modules/home/views/Homepage/profile_view.dart';
+import 'package:toiletmap/app/modules/home/views/profilepage/profile_view.dart';
 import 'ForgotPasswordView.dart'; // Import the ForgotPasswordView
 import 'SignUpView.dart'; // Import SignUpView
-import 'package:toiletmap/app/modules/home/views/Homepage/MapPage.dart';
+import 'package:toiletmap/app/modules/home/views/MapMenu/mapglobal_view.dart';
 
 
 class LoginView extends StatelessWidget {
@@ -74,7 +74,7 @@ class LoginView extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Navigate to MapPage using GetX when login button is pressed
-                Get.to(() => ProfileView());
+                Get.to(() => MapView());
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.yellow[700], // Button color

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'home_view.dart'; // Import your Login view
+import 'package:toiletmap/app/modules/home/views/Login/home_view.dart';
+//import 'home_view.dart'; // Import your Login view
 
 class SignUpView extends StatelessWidget {
   @override
