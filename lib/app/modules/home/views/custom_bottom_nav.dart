@@ -4,6 +4,7 @@ import 'package:toiletmap/app/modules/home/views/MapMenu/mapglobal_view.dart';
 import 'package:toiletmap/app/modules/home/views/profilepage/profile_view.dart';
 import 'package:toiletmap/app/modules/home/controllers/bottomnav_controller.dart'; // Import controller
 import 'package:toiletmap/app/modules/home/views/InboxMenu/inbox_view.dart';
+import 'package:toiletmap/app/modules/home/views/FeedMenu/Feedview.dart';
 class CustomBottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class CustomBottomNav extends StatelessWidget {
           if (index == 0) {
             Get.to(MapView()); // Navigasi ke halaman Map
           } else if (index == 1) {
-            Get.snackbar('Layers', 'Navigating to Layers tab');
+            Get.to(FeedView()); // Navigasi ke halaman Profile
           } else if (index == 2) {
             Get.to(ProfileView()); // Navigasi ke halaman Profile
           } else if (index == 3){
